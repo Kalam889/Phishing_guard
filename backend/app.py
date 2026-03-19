@@ -1,11 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, resources={
-    r"/*": {
-        "origins": "https://phishing-guard-peach.vercel.app"
-    }
-})
+CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 #------CREATE REPLACEMENT-----
 replacements = {
     "4": "a",
