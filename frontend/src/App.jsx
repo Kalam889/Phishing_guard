@@ -4,7 +4,7 @@ function App() {
   const [result, setResult] = useState("");
   const [risk, setRisk] = useState(0);
   function checkUrl() {
-      fetch("https://phishing-guard-cpjm.onrender.com/url",{
+      fetch("https://phishing-guard-cpim.onrender.com/url",{
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body:JSON.stringify({url:url})  
