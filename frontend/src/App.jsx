@@ -4,6 +4,7 @@ function App() {
   const [result, setResult] = useState("");
   const [risk, setRisk] = useState(0);
   function checkUrl() {
+      // alert("clicked");
       fetch("https://phishing-guard-cpim.onrender.com/url",{
       method: "POST",
       headers: {"Content-Type":"application/json"},
@@ -12,8 +13,11 @@ function App() {
     .then(res => res.json())
     .then(data => {
         setResult(data.result);
-        setRisk(data.risk)
-    });
+        setRisk(data.risk);
+    })
+   .catch(err => {
+      console.log("ERROR:", err);
+    });  
   }
   return (
     <div>
